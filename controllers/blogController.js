@@ -131,6 +131,14 @@ controller.showList = async (req, res) => {
 }
    
 controller.showDetails = async(req, res) => {
+    let tags = await models.Tag.findAll({
+        attributes: ['id', 'name']
+    });
+    let categories = await models.Category.findAll({
+        attributes: ['id', 'name', [models.sequelize.literal('(SELECT COUNT(*) FROM "Blogs" WHERE "Blogs"."categoryId" = "Category"."id")'), 'blogCount']],
+        raw: true, // Use raw: true to get plain JSON objects instead of Sequelize instances
+    });
+
     let id = isNaN(req.params.id) ? 0 : parseInt(req.params.id);
     res.locals.blog = await models.Blog.findOne({
         attributes: ['id', 'title', 'description', 'createdAt'],
@@ -142,7 +150,7 @@ controller.showDetails = async(req, res) => {
             { model: models.Comment }
         ]
     })
-    res.render('details');
+    res.render('details', { tags: tags, categories: categories });
 }
 
 module.exports = controller;
