@@ -23,7 +23,7 @@
   "production": {
     "username": "db_s81z_user",
     "password": "G1GXZtk8Wd420clmXbRCUeQ1tHywlxD9",
-    "database": "database_production",
+    "database": "db_s81z",
     "host": "dpg-clfb7cladtrs73eajjbg-a.singapore-postgres.render.com",
     "dialect": "postgres",
     "dialectOptions": {
