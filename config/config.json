@@ -10,7 +10,8 @@
         "require": true,
         "rejectUnauthorized": false
       }
-    }
+    },
+    "ssl": true
   },
   "test": {
     "username": "db_s81z_user",
@@ -36,6 +37,7 @@
         "require": true,
         "rejectUnauthorized": false
       }
-    }
+    }, 
+    "ssl": true
   }
 }
