@@ -4,16 +4,7 @@
     "password": "G1GXZtk8Wd420clmXbRCUeQ1tHywlxD9",
     "database": "db_s81z",
     "host": "dpg-clfb7cladtrs73eajjbg-a.singapore-postgres.render.com",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "ssl": {
-        "require": true,
-        "rejectUnauthorized": false,
-        "ca": "fs.readFileSync('/path/to/server-certificates/root.crt').toString()",
-    "key": "fs.readFileSync('/path/to/client-key/postgresql.key').toString()",
-    "cert": "fs.readFileSync('/path/to/client-certificates/postgresql.crt').toString()",
-      }
-    }
+    "dialect": "postgres"
   },
   "test": {
     "username": "db_s81z_user",
